@@ -1,0 +1,108 @@
+{
+  "feature_names": [
+    "age",
+    "trestbps",
+    "chol",
+    "thalach",
+    "oldpeak",
+    "sex_0",
+    "sex_1",
+    "cp_1",
+    "cp_2",
+    "cp_3",
+    "cp_4",
+    "fbs_0",
+    "fbs_1",
+    "restecg_0",
+    "restecg_1",
+    "restecg_2",
+    "exang_0",
+    "exang_1",
+    "slope_1",
+    "slope_2",
+    "slope_3",
+    "ca_0.0",
+    "ca_1.0",
+    "ca_2.0",
+    "ca_3.0",
+    "thal_3.0",
+    "thal_6.0",
+    "thal_7.0"
+  ],
+  "dummy_columns": [
+    "age",
+    "trestbps",
+    "chol",
+    "thalach",
+    "oldpeak",
+    "sex_0",
+    "sex_1",
+    "cp_1",
+    "cp_2",
+    "cp_3",
+    "cp_4",
+    "fbs_0",
+    "fbs_1",
+    "restecg_0",
+    "restecg_1",
+    "restecg_2",
+    "exang_0",
+    "exang_1",
+    "slope_1",
+    "slope_2",
+    "slope_3",
+    "ca_0.0",
+    "ca_1.0",
+    "ca_2.0",
+    "ca_3.0",
+    "thal_3.0",
+    "thal_6.0",
+    "thal_7.0"
+  ],
+  "categorical_features": [
+    "sex",
+    "cp",
+    "fbs",
+    "restecg",
+    "exang",
+    "slope",
+    "ca",
+    "thal"
+  ],
+  "numeric_features": [
+    "age",
+    "trestbps",
+    "chol",
+    "thalach",
+    "oldpeak"
+  ],
+  "target_column": "num",
+  "model_info": {
+    "Logistic Regression": {
+      "solver": "liblinear",
+      "max_iter": 1000
+    },
+    "Random Forest": {
+      "n_estimators": 200,
+      "max_depth": 8
+    }
+  },
+  "metrics": [
+    {
+      "Model": "Logistic Regression",
+      "Accuracy": 0.8852459016393442,
+      "Precision": 0.8387096774193549,
+      "Recall": 0.9285714285714286,
+      "F1": 0.8813559322033898,
+      "ROC_AUC": 0.9675324675324676
+    },
+    {
+      "Model": "Random Forest",
+      "Accuracy": 0.8852459016393442,
+      "Precision": 0.8387096774193549,
+      "Recall": 0.9285714285714286,
+      "F1": 0.8813559322033898,
+      "ROC_AUC": 0.9415584415584415
+    }
+  ]
+}
