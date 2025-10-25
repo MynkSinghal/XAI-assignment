@@ -130,10 +130,26 @@ FEATURE_DESCRIPTIONS = {
 
 def get_asset_paths() -> Dict[str, Path]:
     """Get paths to all required assets."""
-    app_dir = Path(__file__).parent
-    project_root = app_dir.parent.parent
+    # Get absolute path to the project root
+    current_file = Path(__file__).resolve()
     
-    group_dir = project_root / "Group07_XAI_Assignment_MayankSinghal_UtkarshShukla" / "XAI_HeartDisease"
+    # Try different path resolutions
+    possible_roots = [
+        current_file.parent.parent.parent.parent,  # XAI-assignment root
+        current_file.parent.parent.parent,  # Alternative
+    ]
+    
+    group_dir = None
+    for root in possible_roots:
+        test_path = root / "Group07_XAI_Assignment_MayankSinghal_UtkarshShukla" / "XAI_HeartDisease"
+        if test_path.exists():
+            group_dir = test_path
+            break
+    
+    # Fallback: use current file location
+    if group_dir is None:
+        app_dir = Path(__file__).resolve().parent
+        group_dir = app_dir.parent.parent / "Group07_XAI_Assignment_MayankSinghal_UtkarshShukla" / "XAI_HeartDisease"
     
     return {
         "models_dir": group_dir / "app" / "models",
